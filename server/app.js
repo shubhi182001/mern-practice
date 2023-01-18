@@ -1,10 +1,18 @@
 const express = require("express");
 const app = express();
 
+
+//Middleware: whenever we want to authorize and check we make use of middleware. 
+//we first authorize then call next();
+const middleware = (req, res, next) => {
+    console.log("hello from middleware");
+    next();
+}
+
 app.get("/", (req, res) => {
     res.send("Hello from server")
 })
-app.get("/about", ( req, res) => {
+app.get("/about", middleware, ( req, res) => {
     res.send("hello from about");
 })
 app.get("/contact", (req, res) => {
