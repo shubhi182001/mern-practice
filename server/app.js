@@ -6,6 +6,7 @@ const app = express();
 dotenv.config();
 const PORT = process.env.PORT;
 require('./db/conn');
+const User = require("./model/userSchema");
 
 
 
