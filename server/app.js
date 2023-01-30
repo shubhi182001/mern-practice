@@ -27,6 +27,7 @@ app.get("/about", middleware, ( req, res) => {
     res.send("hello from about");
 })
 app.get("/contact", (req, res) => {
+    // res.cookie("test", 'shubhi');
     res.send("hello from contact");
 })
 app.get("/signin", (req, res)=> {
